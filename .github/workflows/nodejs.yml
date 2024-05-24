@@ -37,7 +37,7 @@ jobs:
           server_port: 587
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: Status budowy aplikacji Go
+          subject: Status budowy aplikacji React
           to: ${{ secrets.MAIL_USERNAME }}
           from: ${{ secrets.MAIL_USERNAME }}
           body: Build zakończony powodzeniem!
