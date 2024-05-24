@@ -8,7 +8,7 @@ function Payments(){
     const [method, setMethod] = useState("")
     //const [price, setPrice]=useState("")
     const [info, setInfo]=useState("")
-    const { basket, setBasket } = React.useContext(BasketContext);
+    const { basket} = React.useContext(BasketContext);
     const total = basket.reduce((accumulator, item) => {
         return accumulator + (item.product.PRICE * item.quantity);
     }, 0);
@@ -34,7 +34,7 @@ function Payments(){
                     QUANTITY: item.quantity
                 }
                 try {
-                    const response = await axios.post("https://jwgoserver.azurewebsites.net/basket", data2)
+                    await axios.post("https://jwgoserver.azurewebsites.net/basket", data2)
                 }
                 catch (e) {
                     setInfo(e)
